@@ -75,5 +75,5 @@ APPHTML
    end
 
    # link for given url
-   return %Q|<p><a href="#{url}">url</a></p>|
+   return %Q|<p><a href="#{url}">#{url}</a></p>|
 end

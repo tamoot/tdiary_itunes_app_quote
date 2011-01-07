@@ -1,0 +1,25 @@
+itune_app_quote.rb - Making link with image to ITunes.
+Copyright (C) 2011, tamoot <tamoot+tdiary@gmail.com>
+You can redistribute it and/or modify it under GPL2.
+
+ - Make below DOM source, using amazon.rb css...
+
+    <div class="amazon-detail-desc">
+       <span class="amazon-title">App name</span><br>
+       <span class="amazon-price">Release: 2011/01/05</span><br>
+       <span class="amazon-price">Version: XXX</span><br>
+
+       <span class="amazon-price">Price: XXXX</span><br>
+       <span class="amazon-price">Language: XXXX</span><br>
+       <span class="amazon-price">Seller: XXXX</span><br>
+       <span class="amazon-price">Requirement: XXXX</span><br>
+    </div>
+
+
+ - usage
+  tDiary style : <%= itune_app_crop 'iTunes App url' =>
+  Wiki style   : {{itune_app_crop 'iTunes App url' }}
+
+ - sample
+  see below my tDiary.
+  http://www.tamoot.net/d/20110106.html#p01

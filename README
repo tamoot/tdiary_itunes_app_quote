@@ -15,6 +15,8 @@ You can redistribute it and/or modify it under GPL2.
        <span class="amazon-price">Requirement: XXXX</span><br>
     </div>
 
+　- support
+   tDiary 3.0.1 or later
 
  - usage
   tDiary style : <%= itune_app_crop 'iTunes App url' =>

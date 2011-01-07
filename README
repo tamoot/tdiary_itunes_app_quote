@@ -1,4 +1,4 @@
-itune_app_quote.rb - Making link with image to ITunes.
+itune_app_quote.rb - Making link with image to iTunes.
 Copyright (C) 2011, tamoot <tamoot+tdiary@gmail.com>
 You can redistribute it and/or modify it under GPL2.
 
@@ -15,8 +15,8 @@ You can redistribute it and/or modify it under GPL2.
        <span class="amazon-price">Requirement: XXXX</span><br>
     </div>
 
-　- support
-   tDiary 3.0.1 or later
+ - support
+  tDiary 3.0.1 or later
 
  - usage
   tDiary style : <%= itune_app_crop 'iTunes App url' =>

@@ -13,10 +13,14 @@
 
 require 'kconv'
 require 'open-uri'
+require 'timeout'
 
 def itunes_app_quote(url)
    begin
-      xml = open(url).read
+      xml = ''
+      timeout( 5 ) do
+         xml = open(url).read
+      end
       
       img_src = xml.scan(/<img src="(http:\/\/.+\.175x175-75\.jpg)/).flatten.first
       

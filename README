@@ -2,7 +2,7 @@ itune_app_quote.rb - Making link with image to ITunes.
 Copyright (C) 2011, tamoot <tamoot+tdiary@gmail.com>
 You can redistribute it and/or modify it under GPL2.
 
- - Make below DOM source, using amazon.rb css...
+ - Make below DOM source, using amazon　plugin css(tdiary-core/theme/base.css).
 
     <div class="amazon-detail-desc">
        <span class="amazon-title">App name</span><br>

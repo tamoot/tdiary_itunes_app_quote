@@ -11,7 +11,6 @@
 #    <%= itunes_app_quote "url" %>
 #
 
-require 'kconv'
 require 'open-uri'
 require 'timeout'
 
@@ -48,20 +47,20 @@ def itunes_app_quote(url)
       
       detail = xml.scan(regrep).flatten
       
-      date    = detail[0].to_s.toutf8
-      version = detail[1].to_s.toutf8
-      lang    = detail[2].to_s.toutf8
-      seller  = detail[3].to_s.toutf8
-      requirement = detail[4].to_s.toutf8
+      date    = @conf.to_native detail[0].to_s
+      version = @conf.to_native detail[1].to_s
+      lang    = @conf.to_native detail[2].to_s
+      seller  = @conf.to_native detail[3].to_s
+      requirement = @conf.to_native detail[4].to_s
 
       if img_src && h1 && price
          # use amazon-detail ss
          return <<APPHTML
 <div class="amazon-detail">
     <a href="#{url}">
-    <img src="#{img_src}" alt="#{h1.toutf8}" width="128" height="128" class="amazon-detail left">
+    <img src="#{img_src}" alt="#{@conf.to_native h1}" width="128" height="128" class="amazon-detail left">
     <div class="amazon-detail-desc">
-       <span class="amazon-title">#{h1.toutf8}</span><br>
+       <span class="amazon-title">#{@conf.to_native h1}</span><br>
        <span class="amazon-price">#{@label_date}: #{date}</span><br>
        <span class="amazon-price">#{@label_version}: #{version}</span><br>
        <span class="amazon-price">#{@label_price}: #{price} yen</span><br>

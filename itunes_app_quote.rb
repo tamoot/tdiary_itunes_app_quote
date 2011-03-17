@@ -11,14 +11,21 @@
 #    <%= itunes_app_quote "url" %>
 #
 
-require 'open-uri'
+require 'net/http'
 require 'timeout'
 
 def itunes_app_quote(url)
    begin
       xml = ''
+      Net::HTTP.version_1_2
+      px_host, px_port = ( @conf['proxy'] || '' ).split( /:/ )
+      Net::HTTP.version_1_2
+      uri = URI::parse(url)
       timeout( 5 ) do
-         xml = open(url).read
+         xml = Net::HTTP::Proxy(px_host, px_port).start(uri.host, uri.port) do |http|
+            response = http.get(uri.request_uri)
+            response.body
+         end
       end
       
       img_src = xml.scan(/<img src="(http:\/\/.+\.175x175-75\.jpg)/).flatten.first
